@@ -10,9 +10,13 @@ Create the DB and load the default .txt file using the private readFile function
 */
 CropDB::CropDB(){
     numCrops = 0;
+    crops = new CropInfo[MaxCeral];
     readFile("cropTiny.txt");
 }
 
+CropDB::~CropDB(){
+  delete crops;
+}
 /**
 Ask the user to specify a db name, and then load the data using the private function
 */
